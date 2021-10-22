@@ -9,6 +9,7 @@ import { SectionGenericComponent } from './component/section-generic/section-gen
 import { PlaylistheaderComponent } from './component/playlistheader/playlistheader.component';
 import { PlaylistbodyComponent } from './component/playlistbody/playlistbody.component';
 import { OrderlistPipe } from './pipe/orderlist.pipe';
+import { ImgbrokenDirective } from './directives/imgbroken.directive';
 
 
 
@@ -23,6 +24,7 @@ import { OrderlistPipe } from './pipe/orderlist.pipe';
     PlaylistheaderComponent,
     PlaylistbodyComponent,
     OrderlistPipe,
+    ImgbrokenDirective,
   ],
   imports: [
     CommonModule,
@@ -37,7 +39,9 @@ import { OrderlistPipe } from './pipe/orderlist.pipe';
     SectionGenericComponent,
     PlaylistheaderComponent,
     PlaylistbodyComponent,
-    OrderlistPipe
+    OrderlistPipe,
+    ImgbrokenDirective,
+
 
 
   ]
