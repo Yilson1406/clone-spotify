@@ -1,10 +1,19 @@
-import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+
   {
-    path:'',component:HomeComponent
+    path:'tracks',
+    loadChildren: ()=> import('../track/track.module').then(m => m.TrackModule)
+  },
+  {
+    path:'favorites',
+    loadChildren: ()=> import('../favorites/favorites.module').then(m => m.FavoritesModule)
+  },
+  {
+    path:'history',
+    loadChildren: ()=> import('../history/history.module').then(m => m.HistoryModule)
   }
 ];
 
