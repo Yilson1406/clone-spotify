@@ -1,6 +1,7 @@
-import { TracksModel } from './../../../../core/model/tracksmodel';
+import { TracksModel } from 'src/app/core/model/tracksmodel';
+import { TrackService } from './../../services/track.service';
 import { Component, OnInit } from '@angular/core';
-import * as dataraw from  '../../../../data/track.json'
+
 
 @Component({
   selector: 'app-tracks',
@@ -9,13 +10,18 @@ import * as dataraw from  '../../../../data/track.json'
 })
 export class TracksComponent implements OnInit {
 
-  tracks: Array<TracksModel> = []
-  constructor() { }
+  tracks:TracksModel[]=[]
+
+  constructor(private _tracks:TrackService) { }
 
   ngOnInit(): void {
-    const {data} : any = (dataraw as any).default
-    this.tracks = data
-
+  this.getalltracks();
   }
 
+  getalltracks(){
+    this._tracks.getAllRandom$()
+    .subscribe((response: TracksModel[]) => {
+      this.tracks = response
+    })
+  }
 }
